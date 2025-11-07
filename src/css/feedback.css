@@ -1,0 +1,128 @@
+.review {
+    font-family: 'Raleway', sans-serif;
+    color: #080c09;
+    letter-spacing: 0.01em;
+}
+
+#feedback {
+    padding: 64px 0;
+
+    @media screen and (min-width: 768px) and (max-width: 1439px) {
+        padding: 32px 0;
+    }
+}
+
+.review-title {
+    margin-bottom: 24px;
+}
+
+.review-description {
+    margin-bottom: 80px;
+}
+
+.review-item-text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.review-item-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.stars-rating {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.rating-item {
+    height: 20px;
+}
+
+.review-controls {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-nav-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-btn-prev,
+.nav-btn-next {
+    position: static !important;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    border: 1px solid rgba(8, 12, 9, 0.15);
+    fill: #080c09;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-btn-prev:hover,
+.nav-btn-next:hover {
+    background-color: #975052;
+    fill: #fff;
+}
+
+.nav-btn-prev:active,
+.nav-btn-next:active {
+    background-color: #6b0609;
+    fill: #fff;
+}
+
+.nav-btn-prev:focus-visible,
+.nav-btn-next:focus-visible {
+    outline: 2px solid #975052;
+    outline-offset: 2px;
+}
+
+.nav-btn-prev:disabled,
+.nav-btn-next:disabled {
+    opacity: 0.3 !important;
+    cursor: not-allowed;
+    background-color: #f2f2f2;
+    fill: #080c09;
+}
+
+.nav-btn-prev::after,
+.nav-btn-prev::before,
+.nav-btn-next::after,
+.nav-btn-next::before {
+    display: none;
+}
+
+.swiper-pagination {
+    position: static !important;
+    margin-left: 40px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #080c09 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: none !important;
+}

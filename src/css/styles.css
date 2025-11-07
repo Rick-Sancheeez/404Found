@@ -9,7 +9,9 @@
 @import url('./container.css');
 
 /* Sections style */
+@import url('./feedback.css');
 @import url('./footer.css');
+
 
 body {
   font-family: "Raleway", sans-serif;
