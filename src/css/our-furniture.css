@@ -1,0 +1,245 @@
+
+.our-furniture {
+    padding: 48px 0;
+    font-family: Raleway;
+}
+
+.container-furniture {
+    padding: 0 20px;
+}
+
+.container-furniture .title {
+    font-family: Raleway;
+    font-weight: 700;
+    
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 1%;
+
+    margin-bottom: 16px;
+}
+
+.container-furniture .description {
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 160%;
+    letter-spacing: 0%;
+
+    margin-bottom: 40px;
+}
+
+.container-furniture .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-bottom: 40px;
+
+    
+}
+
+.container-furniture .options .option {
+    flex-basis: calc((100% - 16px) / 2);
+
+    position: relative;
+}
+
+.container-furniture .options .option > span {
+    font-weight: Bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-furniture .options .option.active {
+    outline: none;
+}
+
+.container-furniture .options .option.active::after {
+    content: "";
+    inset: 0px;              
+    border-radius: 6px;
+    border: 8px solid #6B0609;
+
+    position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+    .container-furniture {
+        padding: 0 32px;
+    }
+
+    .container-furniture .options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .container-furniture .options .option {
+        flex-basis: calc((100% - 3 * 24px) / 4);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .our-furniture {
+        padding: 80px 0;
+    }
+
+    .container-furniture {
+        padding: 0 64px;
+    }
+
+    .container-furniture .options .option {
+    flex-basis: calc((100% - 6 * 24px) / 7);
+
+    position: relative;
+}
+}
+
+
+.our-furniture .container-furniture .show-more {
+    display: block;
+    padding: 10px 0;
+    margin: 32px auto 48px;
+
+    width: 100%;
+
+    background-color: #6B0609;
+
+    border-radius: 100px;
+
+    color: white;
+    font-size: 16px;
+    font-family: Raleway;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0%;
+
+    border: none;
+    box-shadow: 0px -2px 1px 0px rgba(0, 0, 0, 0.2) inset;
+}
+
+.our-furniture .container-furniture .show-more:hover {
+    opacity: 50%;
+}
+
+.our-furniture .container-furniture .show-more:focus {
+    opacity: 20%;
+}
+
+@media screen and (min-width: 768px) {
+    .our-furniture .container-furniture .show-more {
+        width: 340px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .our-furniture .container-furniture .show-more {
+        margin: 32px auto 80px;
+        width: 421px;
+    }
+
+}
+
+
+/* markup */
+@media screen and (max-width: 767px) {
+    .our-furniture .furniture-items .item:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.our-furniture .furniture-items .item {
+    overflow: hidden;
+    
+}
+
+.our-furniture .furniture-items .item img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.our-furniture .furniture-items .item .item-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 160%;
+
+    margin: 16px 0 8px 0;
+}
+
+.our-furniture .furniture-items .item .item-price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 160%;
+
+    margin-bottom: 16px;
+}
+
+.our-furniture .furniture-items .item .color-options {
+    display: flex;
+    gap: 16px;
+
+    margin-bottom: 8px;
+}
+
+.our-furniture .furniture-items .item .color-options .color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(131, 133, 132, 0.1);
+}
+
+.our-furniture .furniture-items .item .color-options .color:focus,
+.our-furniture .furniture-items .item .color-options .color:active {
+    border: 4px solid rgba(131, 133, 132, 1);
+}
+
+.our-furniture .furniture-items .item .details-button {
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+
+    border-radius: 100px;
+    border: none;
+    padding: 10px 24px;
+
+    box-shadow: 0px -2px 1px 0px rgba(8, 12, 9, 0.05) inset;
+
+    color: rgb(8, 12, 9);
+}
+
+.our-furniture .furniture-items .item .details-button:hover {
+    opacity: 50%;
+}
+
+.our-furniture .furniture-items .item .details-button:focus {
+    opacity: 20%;
+}
+
+
+@media screen and (min-width: 768px) {
+    .our-furniture .furniture-items {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .our-furniture .furniture-items .item {
+        flex-basis: calc((100% - 24px) / 2);
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    .our-furniture .furniture-items .item {
+        flex-basis: calc((100% - 3 * 24px) / 4);
+    }
+}
+
