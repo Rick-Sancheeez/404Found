@@ -26,6 +26,12 @@ function closeModal() {
 	modal.classList.add('hidden');
 	document.title = pageTitle;
 	document.body.style.overflow = '';
+	if ('selectedFurnitureId' in localStorage) {
+		localStorage.removeItem('selectedFurnitureId');
+	};
+	if ('selectedFurnitureColor' in localStorage) {
+		localStorage.removeItem('selectedFurnitureColor');
+	};
 }
 
 form.addEventListener('submit', async e => {
