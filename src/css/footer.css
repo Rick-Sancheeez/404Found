@@ -49,13 +49,33 @@
     fill:#975052;
 }
 
+.footer-social-icon {
+    fill: currentColor;
+    transition: fill 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer-social-link {
+    color: #fff;
+    transition: color 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.footer-social-link:link,
+.footer-social-link:visited,
+.footer-social-link:focus {
+    color: #fff;
+    fill: #fff;
+}
+
+.footer-social-link:hover,
+.footer-social-link:active,
+.footer-social-link:focus:hover {
+    color: #975052;
+    fill: #975052;
+}
+
 .footer-social{
     display: flex;
     gap: 24px;
-}
-
-.footer-social-item{
-    transition: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .footer-copyright{
