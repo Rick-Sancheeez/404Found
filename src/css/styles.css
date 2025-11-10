@@ -9,6 +9,7 @@
 @import url('./container.css');
 
 /* Sections style */
+@import url('./feedback.css');
 @import url('./about-us.css');
 @import url('./footer.css');
 
