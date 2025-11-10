@@ -10,10 +10,18 @@
 
 /* Sections style */
 @import url('./feedback.css');
+@import url('./about-us.css');
 @import url('./footer.css');
 
 
 body {
   font-family: "Raleway", sans-serif;
   color: #080c09;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
 }
