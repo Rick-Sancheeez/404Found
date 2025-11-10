@@ -68,14 +68,31 @@
 
 .footer-social-link:hover,
 .footer-social-link:active,
-.footer-social-link:focus:hover {
+.footer-social-link:focus:hover,
+.footer-social-link:hover .footer-social-icon,
+.footer-social-link:focus .footer-social-icon,
+.footer-nav-link:hover,
+.footer-nav-link:focus,
+.footer-logo-link:hover,
+.footer-logo-link:focus {
     color: #975052;
     fill: #975052;
+}
+
+.footer-nav-link,
+.footer-logo-link {
+    transition: 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .footer-social{
     display: flex;
     gap: 24px;
+}
+
+.footer-social-link,
+.footer-nav-link,
+.footer-logo-link {
+    outline: none;
 }
 
 .footer-copyright{
