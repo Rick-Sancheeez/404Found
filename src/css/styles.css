@@ -10,6 +10,9 @@
 @import url('./order.css');
 
 @import url('./our-furniture.css'); 
+
+@import url('./modal-details.css');
+
 /* Sections style */
 @import url('./feedback.css');
 @import url('./about-us.css');
@@ -27,3 +30,4 @@ h2 {
   line-height: 120%;
   letter-spacing: 0.01em;
 }
+

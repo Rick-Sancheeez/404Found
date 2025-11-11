@@ -1,6 +1,8 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
+import {addEventDetailButtons} from "./modal-details";
+
 let page = 1;
 let totalPages = 0;
 let per_page = 8;
@@ -94,7 +96,7 @@ function createGallery (items) {
             </div>
 
             <p class="item-price"><span>${item.price}</span> грн</p>
-            <button class="details-button">Детальніше</button>
+            <button class="details-button" data-id="${item._id}">Детальніше</button>
         
         </li>`
     }).join("");
@@ -108,7 +110,7 @@ function createGallery (items) {
     });
 
     attachColorSwitch();
-    //addEventDetailButtons ();
+    addEventDetailButtons ();
 }
 
 function attachColorSwitch() {
@@ -125,14 +127,5 @@ function attachColorSwitch() {
     });
 }
 
-// .our-furniture .furniture-items .item .details-button
+//.our-furniture .furniture-items .item .details-button
 
-/* function addEventDetailButtons () {
-    const detailButtons = document.querySelectorAll(".our-furniture .furniture-items .item .details-button");
-
-    detailButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            
-        });
-    });
-} */ 
