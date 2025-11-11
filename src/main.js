@@ -7,4 +7,5 @@ import './js/feedback.js';
 import './js/faq.js';
 import './css/styles.css';
 import "./js/modal-details";
+import "./js/footer.js";
 
