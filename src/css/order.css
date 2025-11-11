@@ -1,0 +1,163 @@
+body {
+	font-family: Raleway, sans-serif;
+	font-style: Regular;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+}
+
+.order-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+}
+
+.modal {
+	background: #fff;
+	border-radius: 10px;
+	width: 295px;
+	padding: 64px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	position: relative;
+}
+
+.order-close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-title {
+	font-weight: 700;
+	text-align: center;
+	font-size: 36px;
+	margin: 0;
+	color: rgba(8, 12, 9, 1);
+	font-style: bold;
+}
+
+.order-form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.form-group {
+	font-size: 16px;
+	line-height: 160%;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	height: 76px;
+}
+
+.area {
+	height: 214px;
+}
+
+label {
+	font-size: 16px;
+	color: #333;
+	font-weight: 500;
+}
+
+input,
+textarea {
+	font-size: 16px;
+	line-height: 160%;
+	font-size: 16px;
+	padding: 8px 12px;
+	border: 1px solid rgba(8, 12, 9, 0.15);
+	border-radius: 10px;
+	background-color: #f7f7f7;
+	outline: none;
+	transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus {
+	background: rgba(8, 12, 9, 0.05);
+}
+
+input.error,
+textarea.error {
+	border-color: #6b0609;
+	background-color: #f5f5f5;
+}
+
+textarea {
+	resize: none;
+	height: 180px;
+}
+
+.submit-btn {
+	align-items: center;
+	background-color: rgba(107, 6, 9, 1);
+	color: #fff;
+	border: none;
+	border-radius: 50px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	height: 46px;
+
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+	opacity: 50%;
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+
+	.modal {
+		width: 640px;
+		padding: 32px;
+		padding-top: 64px;
+	}
+
+	.submit-btn {
+		width: 196px;
+		align-self: center;
+	}
+}
+
+@media (min-width: 1440px) {
+
+	.modal {
+		width: 738px;
+		padding: 64px;
+	}
+
+	.submit-btn {
+		width: 196px;
+		align-self: center;
+	}
+
+	.modal-title {
+		font-size: 48px;
+	}
+}
+
+.hidden {
+	display: none;
+}

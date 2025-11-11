@@ -1,214 +1,173 @@
-.modal {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(3px);
-  z-index: 1000;
+/* --- СТИЛІ МОДАЛЬНОГО ВІКНА: БАЗОВИЙ МАКЕТ (ТЕЛЕФОН < 768px) --- */
+
+/* Контейнер, що блокує екран (без змін) */
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); display: none; justify-content: center;
+    align-items: center; z-index: 1000; overflow-y: auto; box-sizing: border-box;
 }
 
-.modal.hidden {
-  display: none;
-}
-
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
+/* Основний блок модального вікна (без змін) */
 .modal-content {
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 600px;
-  width: 90%;
-  z-index: 1001;
+    /* PADDING ТЕЛЕФОНУ: 64px 20px 44px 20px (Top/LR/Bottom) */
+    padding: 64px 20px 44px; 
+    background-color: #ffffff; width: 95%; max-width: 100%;
+    border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    position: relative; box-sizing: border-box;
 }
 
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
+/* Кнопка закриття (без змін) */
+.close-button {
+    position: absolute; top: 20px; right: 20px; font-size: 30px;
+    font-weight: 300; background: none; border: none; cursor: pointer;
+    color: #333333; line-height: 1; opacity: 0.8; transition: opacity 0.2s;
 }
+.close-button:hover { opacity: 1; }
 
-.modal-body img {
-  width: 100%;
-  border-radius: 8px;
-}
+/* МАКЕТ: ОДНА КОЛОНКА */
+.product-details { display: flex; flex-direction: column; gap: 40px; }
+.image-column, .product-info-column { flex-basis: 100%; }
 
-.modal-body p {
-  margin-top: 10px;
-}
-
-.modal-body {
-  display: flex;
-  gap: 40px;
-  padding: 40px;
-  background: #fff;
-  border-radius: 12px;
-}
-
-.modal-content {
-  display: flex;
-  gap: 40px;
-}
-
-.modal-images {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* ЗОБРАЖЕННЯ (Головне фото) */
 .main-image {
-  width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
+    width: 100%; height: auto;
+    aspect-ratio: 16/9; 
+    object-fit: cover; border-radius: 8px;
+}
+.main-image-container { margin-bottom: 16px; }
+
+/* Мініатюри (Телефон) */
+.additional-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Дві вертикальні фотографії поряд */
+    gap: 16px;
+    height: 300px; 
+}
+.image-thumb {
+    width: 100%; height: 100%; overflow: hidden; border-radius: 6px; 
+    cursor: pointer; opacity: 0.8; transition: opacity 0.2s; 
+}
+.thumb-image { width: 100%; height: 100%; object-fit: cover; }
+
+
+/* ДЕТАЛІ ТА ТЕКСТ */
+.product-info-column { display: flex; flex-direction: column; }
+.product-title { font-size: 30px; font-weight: 700; color: #333333; margin-top: 0; margin-bottom: 8px; }
+.product-category { font-size: 16px; color: #7A7A7A; margin-bottom: 24px; }
+
+/* ВИПРАВЛЕНО: Колір ціни змінено на чорний */
+.product-price { 
+    font-size: 32px; font-weight: 700; 
+    color: #333333; /* ЧОРНИЙ КОЛІР */
+    margin-bottom: 16px; 
 }
 
-.thumbnails {
-  display: flex;
-  gap: 10px;
+.product-rating { font-size: 20px; letter-spacing: 2px; margin-bottom: 24px; }
+.color-options { margin-bottom: 24px; }
+.color-label { font-size: 16px; font-weight: 500; color: #333333; margin-bottom: 12px; }
+.color-swatches { 
+    display: flex; 
+    gap: 12px; 
+    /* Обмежуємо ширину для трьох кнопок */
+    max-width: 120px; 
+}
+.color-swatch { 
+    width: 32px; height: 32px; border-radius: 50%; cursor: pointer; border: 1px solid #C4C4C4; transition: box-shadow 0.2s; 
+}
+.color-swatch.selected {
+    border-color: #C4C4C4; 
+    box-shadow: inset 0 0 0 4px #CCCCCC; 
+}
+.product-description { font-size: 16px; line-height: 1.5; color: #333333; margin-bottom: 24px; }
+.product-size { font-size: 16px; color: #333333; font-weight: 500; margin-bottom: 40px; }
+.size-label { margin-right: 5px; }
+.order-button { 
+    background-color: #8B1A1A; color: #ffffff; border: none; padding: 16px 32px; font-size: 18px; font-weight: 600; cursor: pointer; border-radius: 40px; transition: background-color 0.3s; width: 100%; max-width: 100%; margin-top: auto; 
+}
+.order-button:hover { background-color: #6a1313; }
+
+/* ----------------------------------------------------------------------------- */
+
+
+/* --- ДОДАТКОВА ОПТИМІЗАЦІЯ ДЛЯ ДУЖЕ МАЛИХ ЕКРАНІВ (< 768px) --- */
+@media (max-width: 767px) {
+    .modal-content {
+        padding: 64px 20px 44px;
+    }
+    .product-title { font-size: 24px; margin-bottom: 4px; }
+    .product-price { font-size: 20px; }
+
+    .additional-images {
+        height: 200px;
+        gap: 8px;
+    }
 }
 
-.thumb {
-  width: 48%;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.thumb:hover {
-  transform: scale(1.05);
+
+/* --- АДАПТАЦІЯ: ПЛАНШЕТ (Tablet) min-width: 768px --- */
+@media (min-width: 768px) {
+    .modal-content {
+        padding: 64px 32px 32px; 
+        max-width: 800px; 
+    }
+    .product-details { gap: 40px; }
+    
+    .product-title { font-size: 32px; }
+    .product-price { font-size: 36px; }
+
+    /* Планшет: горизонтальний макет для мініатюр */
+    .additional-images { 
+        display: flex; 
+        flex-direction: row; 
+        height: 120px; 
+        gap: 16px;
+    }
+    .image-thumb {
+        width: calc(50% - 8px); 
+        height: 100%;
+    }
+
+    .order-button { max-width: 350px; }
 }
 
-.modal-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
-.modal-inner {
-  display: flex;
-  gap: 40px;
-  padding: 40px 60px;
-  background: #fff;
-  border-radius: 16px;
-  font-family: "Inter", sans-serif;
-  max-width: 1000px;
-  margin: auto;
-}
+/* --- АДАПТАЦІЯ: ПК (Desktop) min-width: 1440px --- */
+@media (min-width: 1440px) {
+    .modal-content {
+        padding: 64px; 
+        max-width: 1000px;
+    }
+    
+    /* МАКЕТ: ДВІ КОЛОНКИ ТІЛЬКИ НА ПК */
+    .product-details {
+        flex-direction: row; 
+        gap: 40px; 
+    }
+    
+    .image-column, .product-info-column {
+        flex-basis: 50%;
+    }
+    
+    /* ФІКСОВАНІ ВИСОТИ ДЛЯ ПК */
+    .main-image {
+        width: 100%;
+        height: 308px; /* Головне фото 308px */
+        aspect-ratio: auto; 
+    }
 
-.modal-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.main-image {
-  width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.thumbnail-list {
-  display: flex;
-  gap: 12px;
-}
-
-.thumb {
-  width: 48%;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.thumb:hover {
-  transform: scale(1.03);
-}
-
-.modal-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: flex-start;
-}
-
-.title {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.category {
-  color: #666;
-  font-size: 16px;
-}
-
-.price {
-  font-size: 22px;
-  font-weight: 700;
-  margin-top: 4px;
-}
-
-.rating {
-  font-size: 20px;
-  color: #000;
-  margin: 4px 0;
-}
-
-.color-label {
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-.color-list {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.color-dot {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.description {
-  font-size: 15px;
-  color: #333;
-  line-height: 1.5;
-  margin: 8px 0;
-}
-
-.size {
-  font-size: 15px;
-  color: #555;
-}
-
-.order-btn {
-  background: linear-gradient(90deg, #8B0000, #600000);
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-  align-self: flex-start;
-  margin-top: 10px;
-}
-.order-btn:hover {
-  transform: scale(1.03);
-  background: linear-gradient(90deg, #a00000, #700000);
+    .additional-images {
+        display: flex; 
+        flex-direction: row; 
+        height: 197px; /* Контейнер для мініатюр 197px */
+        gap: 16px;
+    }
+    
+    .image-thumb {
+        width: calc(50% - 8px); 
+    }
+    .thumb-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
