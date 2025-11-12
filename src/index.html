@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Меблерія</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-
-  <body>
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/order.html" />
-    </main>
-
-    <script type="module" src="./main.js"></script>
-  </body>
-</html>
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
@@ -24,12 +6,12 @@
     <!-- Встроить шрифт Raleway -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
 
     <!-- Встроить шрифт IBM Plex Sans Medium -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,13 +29,14 @@
     <load src="./partials/header.html" />
     <main>
       <!-- Loads the specified .html file -->
+      <load src="./partials/hero.html" />
       <load src="./partials/our-furniture.html" />
       <load src="./partials/about-us.html" />
       <load src="./partials/faq.html" />
       <load src="./partials/feedback.html" />
       <load src="./partials/footer.html" />
     </main>
-
+    <load src="./partials/order.html" />
     <load src="./partials/modal-details.html" />
     <script type="module" src="./main.js"></script>
   </body>
