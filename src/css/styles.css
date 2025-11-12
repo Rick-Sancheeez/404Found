@@ -5,6 +5,7 @@
   |============================
 */
 /* Common styles */
+@import url('./hero.css');
 @import url('./reset.css');
 @import url('./container.css');
 @import url('./order.css');
@@ -17,7 +18,7 @@
 @import url('./feedback.css');
 @import url('./about-us.css');
 @import url('./footer.css');
-@import url('./hero.css');
+
 
 
 /* body {

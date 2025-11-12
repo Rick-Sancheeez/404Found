@@ -14,7 +14,7 @@
 
 }
 
-.hero-title {
+.hero .hero-title {
     margin-bottom: 24px;
     letter-spacing: 0.01em;
     font-weight: 700;
@@ -23,7 +23,7 @@
     text-align: center;
 }
 
-.hero-text {
+.hero .hero-text {
     font-weight: 400;
     font-size: 18px;
     margin-bottom: 32px;
