@@ -198,11 +198,14 @@
 .mobile-menu-footer {
     padding: 1rem;
     border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-cta-mobile {
-    width: 100%;
+    width: 175px;
     padding: 0.75rem 1.5rem;
+
 }
 
 
@@ -293,11 +296,6 @@
     .demo-section {
         padding: 4rem 1.5rem;
     }
-
-    .btn-cta-mobile {
-        display: none;
-    }
-
 
     .mobile-menu {
         max-width: 320px;

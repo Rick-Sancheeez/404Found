@@ -31,9 +31,34 @@ closeBtn.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
 
 mobileNavLinks.forEach(link => {
-  link.addEventListener('click', closeMenu);
+  link.addEventListener('click', e => {
+    const target = link.getAttribute('href');
+    if (target.startsWith('#')) {
+      setTimeout(() => {
+        closeMenu();
+        document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+      e.preventDefault();
+    } else {
+      closeMenu();
+    }
+  });
 });
-
+const btnCtaMobile = document.querySelector('.btn-cta-mobile');
+if (btnCtaMobile) {
+  btnCtaMobile.addEventListener('click', e => {
+    const target = btnCtaMobile.getAttribute('href');
+    if (target.startsWith('#')) {
+      e.preventDefault();
+      setTimeout(() => {
+        closeMenu();
+        document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    } else {
+      closeMenu();
+    }
+  });
+}
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
     closeMenu();
