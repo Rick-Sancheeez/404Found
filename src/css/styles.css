@@ -9,7 +9,7 @@
 @import url('./container.css');
 @import url('./order.css');
 
-@import url('./our-furniture.css'); 
+@import url('./our-furniture.css');
 
 @import url('./modal-details.css');
 
@@ -20,10 +20,10 @@
 @import url('./hero.css');
 
 
-body {
+/* body {
   font-family: "Raleway", sans-serif;
   color: #080c09;
-}
+} */
 
 h2 {
   font-weight: 700;
@@ -31,4 +31,3 @@ h2 {
   line-height: 120%;
   letter-spacing: 0.01em;
 }
-
