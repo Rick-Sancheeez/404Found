@@ -206,6 +206,13 @@
     width: 175px;
     padding: 0.75rem 1.5rem;
     text-align: center;
+    transition: background 0.2s ease, 0.2s ease;
+    box-shadow:
+        0 2px 4px 0 #5A2424,
+        inset 0 -2px 1px 0 rgba(0, 0, 0, 0.3),
+        inset 0 0 0 1px rgba(8, 12, 9, 0.25),
+        inset 0 2px 1px 0 rgba(255, 255, 255, 0.35),
+        inset 0 32px 24px 0 rgba(255, 255, 255, 0.1);
 }
 
 
@@ -332,6 +339,13 @@
 
     .btn-cta-desktop {
         display: block;
+        transition: background 0.2s ease, 0.2s ease;
+        box-shadow:
+            0 2px 4px 0 #5A2424,
+            inset 0 -2px 1px 0 rgba(0, 0, 0, 0.3),
+            inset 0 0 0 1px rgba(8, 12, 9, 0.25),
+            inset 0 2px 1px 0 rgba(255, 255, 255, 0.35),
+            inset 0 32px 24px 0 rgba(255, 255, 255, 0.1);
     }
 
     .mobile-menu-btn {
