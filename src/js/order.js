@@ -15,9 +15,20 @@ if (modal && !modal.classList.contains('hidden')) {
 }
 
 closeBtn.addEventListener('click', () => closeModal());
-modal.addEventListener('click', e => {
-	if (e.target === modal) closeModal();
+
+let isDownOnBackdrop = false;
+
+modal.addEventListener('mousedown', e => {
+	isDownOnBackdrop = (e.target === modal);
 });
+
+modal.addEventListener('mouseup', e => {
+	if (e.target === modal && isDownOnBackdrop) {
+		closeModal();
+	}
+	isDownOnBackdrop = false;
+});
+
 document.addEventListener('keydown', e => {
 	if (e.key === 'Escape') closeModal();
 });
@@ -63,7 +74,6 @@ form.addEventListener('submit', async e => {
 	}
 
 	const comment = commentInput.value.trim();
-
 	const commentPattern = /^[a-zA-Zа-яА-ЯїЇіІєЄґҐ0-9\s.,!?'"()\-:;]{5,300}$/u;
 
 	if (!commentPattern.test(comment)) {
