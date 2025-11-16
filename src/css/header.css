@@ -14,7 +14,9 @@
 }
 
 .header-container {
-    padding: 0 1rem;
+    padding: 0 20px;
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 .header-content {
@@ -206,7 +208,7 @@
     width: 175px;
     padding: 0.75rem 1.5rem;
     text-align: center;
-    transition: background 0.2s ease, 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     box-shadow:
         0 2px 4px 0 #5A2424,
         inset 0 -2px 1px 0 rgba(0, 0, 0, 0.3),
@@ -265,35 +267,11 @@
     height: 24px;
 }
 
-@media (min-width: 375px) {
-    .logo-text {
-        font-size: 1.25rem;
-    }
-
-    .hero-title {
-        font-size: 2.25rem;
-    }
-
-    .hero-text {
-        font-size: 1.125rem;
-    }
-
-    .hero-box {
-        padding: 3rem;
-    }
-
-    .demo-section {
-        padding: 4rem 1rem;
-    }
-
-    .section-title {
-        font-size: 1.875rem;
-    }
-}
 
 @media (min-width: 768px) {
     .header-container {
-        padding: 0 1.5rem;
+        padding: 0 32px;
+        max-width: 768px;
     }
 
     .demo-hero {
@@ -310,6 +288,10 @@
 }
 
 @media (min-width: 1440px) {
+    html {
+        scroll-behavior: smooth;
+    }
+
     .header-content {
         height: 72px;
     }
@@ -321,7 +303,7 @@
     .header-container {
         max-width: 1440px;
         margin: 0 auto;
-        padding: 0 3rem;
+        padding: 0 64px;
     }
 
     .logo-icon {

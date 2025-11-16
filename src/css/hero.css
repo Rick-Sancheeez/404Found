@@ -1,6 +1,6 @@
 .hero {
     background-image: image-set(url(/img/hero/mob_x1-min.jpg) 1x,
-            url(/img/hero/mob_x2-min.jpg) 2x, );
+            url(/img/hero/mob_x2-min.jpg) 2x);
     background-size: cover;
     background-position: center;
     padding-top: 208px;
@@ -11,7 +11,8 @@
 .hero-content {
     display: flex;
     flex-direction: column;
-
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 .hero .hero-title {
@@ -20,7 +21,7 @@
     font-weight: 700;
     font-size: 40px;
     color: #FFFFFF;
-    text-align: center;
+    text-align: left;
 }
 
 .hero .hero-text {
@@ -38,13 +39,12 @@
     border: none;
     border-radius: 100px;
     color: #fff;
-    padding: 10px 86px;
+    padding: 10px 50px;
     font-size: 16px;
     font-weight: 500;
-    width: auto;
-    width: 335px;
+    text-decoration: none;
     text-align: center;
-    transition: background 0.2s ease, 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
     box-shadow:
         0 2px 4px 0 #5A2424,
         inset 0 -2px 1px 0 rgba(0, 0, 0, 0.3),
@@ -66,7 +66,7 @@
 
     .hero {
         background-image: image-set(url(/img/hero/tab_x1-min.jpg) 1x,
-                url(/img/hero/tab_x2-min.jpg) 2x, );
+                url(/img/hero/tab_x2-min.jpg) 2x);
         padding-top: 151px;
         padding-bottom: 80px;
     }
@@ -76,7 +76,7 @@
     }
 
     .hero-content {
-        width: 560px;
+        max-width: 560px;
     }
 
     .hero-text {
@@ -89,7 +89,7 @@
         border: none;
         padding: 10px 24px;
         width: 209px;
-        height: 46px;
+
     }
 }
 
@@ -107,5 +107,9 @@
         margin-bottom: 24px;
         font-size: 56px;
 
+    }
+
+    .hero-content {
+        margin: 0;
     }
 }
