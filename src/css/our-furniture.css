@@ -3,6 +3,11 @@
     margin-top: 45px;
 }
 
+.loader-category {
+    text-align: center;
+    margin-top: 45px;
+}
+
 .our-furniture {
     padding: 48px 0;
     font-family: Raleway;
@@ -10,6 +15,9 @@
 
 .container-furniture {
     padding: 0 20px;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 375px;
 }
 
 .container-furniture .title {
@@ -44,6 +52,8 @@
 }
 
 .container-furniture .options .option {
+    cursor: pointer;
+
     flex-basis: calc((100% - 16px) / 2);
 
     position: relative;
@@ -90,6 +100,7 @@
 @media screen and (min-width: 768px) {
     .container-furniture {
         padding: 0 32px;
+        max-width: 768px;
     }
 
     .container-furniture .options {
@@ -110,6 +121,7 @@
 
     .container-furniture {
         padding: 0 64px;
+        max-width: 1440px;
     }
 
     .container-furniture .options .option {

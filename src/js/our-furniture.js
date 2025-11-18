@@ -12,11 +12,15 @@ let furnitureGallery = document.querySelector(".our-furniture .furniture-items")
 let categoryList = document.querySelector(".our-furniture .options");
 const showMoreButton = document.querySelector(".our-furniture .show-more");
 let loader = document.querySelector(".loader");
+let loaderOfCategoty = document.querySelector(".loader-category");
 
 loader.style.display = "none";
-
+loaderOfCategoty.style.display = "none";
 
 categoryList.addEventListener("click", async (event) => {
+    furnitureGallery.innerHTML = "";
+    showMoreButton.style.display = "none";
+    loaderOfCategoty.style.display = "block";
     const option = event.target.closest(".option");
     if (!option) return; 
 
@@ -29,7 +33,8 @@ categoryList.addEventListener("click", async (event) => {
     const data = await getImagesByQuery(query, page);
 
     const items = data.furnitures;
-    furnitureGallery.innerHTML = "";
+    //furnitureGallery.innerHTML = "";
+    loaderOfCategoty.style.display = "none";
     createGallery(items);   
 
     totalPages = Math.ceil(data.totalItems / per_page);
